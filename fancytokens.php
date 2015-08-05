@@ -439,6 +439,15 @@ function fancytokens_civicrm_tokens( &$tokens ){
   
   }	
 
+  function fancytokens_civicrm_alterMailParams(&$params, $context) {
+    if (function_exists(drupal_alter)) {
+      $message = array('to' => $params['toEmail'], 'body' => array($params['text'], $params['html']));
+      drupal_alter('mail', $message);
+      $params['text'] = $message['body'][0];
+      $params['html'] = $message['body'][1];
+    }
+  }
+
 /**
  * Implementation of hook_civicrm_config
  *
