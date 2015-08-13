@@ -228,7 +228,7 @@ function fancytokens_civicrm_tokens( &$tokens ){
 	                   
   		     	    $tmp_checksum = CRM_Contact_BAO_Contact_Utils::generateChecksum($cid); 
   		     	     $full_contrib_page_link = $partial_contrib_page_link_url.$contrib_page_id."&cs=".$tmp_checksum."&cid=".$cid; 
-  		     	    $tmp_contrib_page_html = "<a href='".$full_contrib_page_link."'>".$link_label."</a>";
+  		     	    $tmp_contrib_page_html = "<a href='".$full_contrib_page_link."' style='color:#000!important'>Click Here</a>";
   		     	    
 	                   $values[$cid][$token_to_fill] =  $tmp_contrib_page_html;
 	               
